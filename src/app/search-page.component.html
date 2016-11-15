@@ -1,0 +1,61 @@
+<h2>Find Candidates</h2>
+
+<h4>Search</h4>
+
+<form #searchForm="ngForm" (ngSubmit)="onSubmit(searchForm.value)">
+<!-- {{diagnostic}} -->
+  <label for="keywords">Keywords</label>
+  <input type="text" name="keywords" id="keywords" (ngModel)="keywords" placeholder="Type your keywords..." >
+
+  <label for="firstName">First Name</label>
+  <input type="text" name="firstName" id="firstName" (ngModel)="model.firstName" (ngModel)="firstName" #entry>
+
+  <label for="lastName">Last Name</label>
+  <input type="text" name="lastName" id="lastName" (ngModel)="lastName">
+
+  <label for="email">Email</label>
+  <input type="text" name="email" id="email" (ngModel)="email">
+
+  <label for="phone">Phone</label>
+  <input type="text" name="phone" id="phone" (ngModel)="phone">
+
+  <label for="city">City</label>
+  <input type="text" name="city" id="city" (ngModel)="city">
+
+  <label for="State">State</label>
+  <input type="text" name="State" id="state" (ngModel)="state">
+
+  <label for="zip">Zipcode</label>
+  <input type="text" name="zip" id="zip" (ngModel)="zip">
+
+  <label for="range">Range</label>
+  <select name="range" id="range" (ngModel)="range">
+    <option *ngFor="let r of ranges" [value]="r">{{r}}</option>
+  </select>
+
+<!--  HIDE TOGGLE -->
+
+  <div class="additionalSearch">
+    <label for="history">Submittal History</label>
+    <select name="history" id="history" (ngModel)="history">
+      <!-- FILL OUT WITH OPTIONS  -->
+    </select>
+
+    <label for="jobCategory">jobCategory</label>
+    <select name="jobCategory" id="jobCategory" (ngModel)="jobCategory">
+      <!-- FILL OUT WITH OPTIONS  -->
+    </select>
+  </div>
+
+<!-- [disabled]="searchForm.ng-pristine" -->
+<!-- (click)="lgModal.show() -->
+<!-- Need modal.hide() function available in Search Page template -->
+  <button type="submit">Search</button>
+
+</form>
+
+<app-modal></app-modal>
+
+<p>
+  You must first enter at least one search term in order to get search results.
+</p>
