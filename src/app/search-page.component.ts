@@ -1,4 +1,5 @@
 import { Component, OnInit, AfterViewInit, ViewChild } from '@angular/core';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { ModalComponent } from './modal.component';
 import { Candidate } from './candidate';
 
@@ -17,6 +18,8 @@ export class SearchPageComponent implements OnInit {
 
   ngOnInit() {};
 
+  model = new Candidate('ted', 'johnson');
+
   submitted = false;
 
   onSubmit(candidate) {
@@ -32,10 +35,10 @@ export class SearchPageComponent implements OnInit {
    if(e.style.display == 'block') {
       e.style.display = 'none';
       b.textContent = 'SHOW';
-  }
-   else{
+    }
+   else {
       e.style.display = 'block';
       b.textContent = 'HIDE ^';
     }
-    }
+  }
 }

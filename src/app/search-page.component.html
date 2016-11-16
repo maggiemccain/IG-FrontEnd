@@ -3,7 +3,7 @@
 <h4>Search</h4>
 
 <form #searchForm="ngForm" (ngSubmit)="onSubmit(searchForm.value)">
-  <div id="toggleDiv" #toggleDiv>
+  <div id="toggleDiv">
 
     <label for="keywords">Keywords</label>
     <input type="text" name="keywords" id="keywords" (ngModel)="keywords" placeholder="Type your keywords..." >
@@ -40,7 +40,7 @@
   <div class="dividerDiv">
 
     <p>Additional Search Options</p>
-    <p class="right" id="toggleButton" (click)="toggle();" #toggle>Hide ^</p>
+    <p class="right" id="toggleButton" (click)="toggle();">HIDE ^</p>
 
   </div>
 
@@ -55,7 +55,7 @@
     <select name="jobCategory" id="jobCategory" class="medInput" (ngModel)="jobCategory">
       <!-- FILL OUT WITH OPTIONS  -->
     </select>
-    
+
     <button class="searchBtn" type="submit" [disabled]="!searchForm.ng-valid" (click)="modal.showChildModal()">SEARCH</button>
     <p class="center"><i>
       You must first enter at least one search term in order to get search results.

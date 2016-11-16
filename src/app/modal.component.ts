@@ -1,5 +1,6 @@
 import { Component, Input, Directive, ViewChild, AfterViewInit } from '@angular/core';
 import { ModalModule } from 'ng2-bootstrap/components/modal';
+import { Candidate } from './candidate';
 
 @Component({
   selector: 'app-modal',
