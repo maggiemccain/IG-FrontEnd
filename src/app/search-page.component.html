@@ -38,26 +38,33 @@
   </div>
 
   <div class="dividerDiv">
+
     <p>Additional Search Options</p>
     <p class="right" id="toggleButton" (click)="toggle();" #toggle>Hide ^</p>
+
   </div>
 
   <div class="additionalSearch">
+
     <label for="history">Submittal History</label>
     <select name="history" id="history" class="medInput" (ngModel)="history">
       <!-- FILL OUT WITH OPTIONS  -->
     </select>
 
-    <label for="jobCategory">jobCategory</label>
+    <label for="jobCategory">Job Category</label>
     <select name="jobCategory" id="jobCategory" class="medInput" (ngModel)="jobCategory">
       <!-- FILL OUT WITH OPTIONS  -->
     </select>
-  <!-- </div> -->
 
 <!-- [disabled]="searchForm.ng-pristine" -->
 <!-- [disabled]="entry.ng-pristine" -->
-  <button class="searchBtn" type="submit" (click)="modal.showChildModal()">SEARCH</button>
+    <button class="searchBtn" type="submit" (click)="modal.showChildModal()">SEARCH</button>
+    <p class="center"><i>
+      You must first enter at least one search term in order to get search results.
+    </i></p>
+
   </div>
+
   <app-modal #modal [first]="searchForm.value.firstName"
     [last]="searchForm.value.lastName"
     [keywords]="searchForm.value.keywords"
@@ -69,7 +76,3 @@
   </app-modal>
 
 </form>
-
-<p><i>
-  You must first enter at least one search term in order to get search results.
-</i></p>
