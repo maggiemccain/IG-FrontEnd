@@ -5,8 +5,7 @@ import { Candidate } from './candidate';
 
 @Component({
   selector: 'app-search-page',
-  // declarations: [ModalComponent],
-  // directives: [ModalComponent],
+
   templateUrl: './search-page.component.html',
   styleUrls: ['./search-page.component.css']
 })
@@ -26,7 +25,7 @@ export class SearchPageComponent implements OnInit {
   onSubmit(candidate) {
     // this.submitted = true;
     console.log(candidate);
-    // this.modalComponent.open();
+    // ModalComponent.show();
   };
 
   // model = new Candidate(1, 'ted', 'johnson');

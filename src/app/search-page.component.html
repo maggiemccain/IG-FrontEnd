@@ -3,7 +3,9 @@
 <h4>Search</h4>
 
 <form #searchForm="ngForm" (ngSubmit)="onSubmit(searchForm.value)">
-<!-- {{diagnostic}} -->
+
+  <!-- <a (click)="modal.showModal(description)" class="more"> -->
+
   <label for="keywords">Keywords</label>
   <input type="text" name="keywords" id="keywords" (ngModel)="keywords" placeholder="Type your keywords..." >
 
@@ -48,14 +50,32 @@
   </div>
 
 <!-- [disabled]="searchForm.ng-pristine" -->
-<!-- (click)="lgModal.show() -->
-<!-- Need modal.hide() function available in Search Page template -->
-  <button type="submit">Search</button>
+<!-- (click)="lgModal.show()  lgModal is a local varaible pointing to the modal directive selector-->
+  <button type="submit" (click)="modal.showModal(description)" class="more">Search</button>
+
+<app-modal #modal></app-modal>
 
 </form>
 
-<app-modal></app-modal>
 
 <p>
   You must first enter at least one search term in order to get search results.
 </p>
+
+<!-- control modal from parent component -->
+<button type="button" class="btn btn-primary" (click)="showChildModal()">Open child modal</button>
+<div bsModal #childModal="bs-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-sm">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" aria-label="Close" (click)="hideChildModal()">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        <h4 class="modal-title">Child modal</h4>
+      </div>
+      <div class="modal-body">
+        I am a child modal, opened from parent component!
+      </div>
+    </div>
+  </div>
+</div>
