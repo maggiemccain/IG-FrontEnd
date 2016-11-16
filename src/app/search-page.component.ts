@@ -24,7 +24,6 @@ export class SearchPageComponent implements OnInit {
   onSubmit(candidate) {
     this.submitted = true;
     console.log(candidate);
-    // new Candidate(candidate.firstName, candidate.lastName)
   };
 
   model = new Candidate('ted', 'johnson');
@@ -34,20 +33,16 @@ export class SearchPageComponent implements OnInit {
   // first: string = 'Maggie';
 
 // angular doesn't appear to recognize .hide() as afunction for HTMLelements
-  onHide(){
-    var searchDiv = document.getElementById('show');
-    var toggleButton = document.getElementById("toggleButton");
-    console.log('button pressed')
-    if  (searchDiv.style.display = 'block') {
-      searchDiv.style.display = 'none';
-      toggleButton.innerHTML = "Show";
-    }
-    else {
-      searchDiv.style.display = 'block';
-      toggleButton.innerHTML = "Hide";
-    }
+  toggle() {
+   var e = document.getElementById('toggleDiv');
+   var b = document.getElementById('toggleButton');
+   if(e.style.display == 'block') {
+      e.style.display = 'none';
+      b.textContent = 'SHOW';
   }
-      // document.getElementById('show').style.display = 'none';};
-  // get diagnostic() { return JSON.stringify(this.model)};
-
+   else{
+      e.style.display = 'block';
+      b.textContent = 'HIDE ^';
+    }
+    }
 }

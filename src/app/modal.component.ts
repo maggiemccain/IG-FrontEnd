@@ -6,12 +6,11 @@ import { Candidate } from './candidate';
 
 @Component({
   selector: 'app-modal',
-  templateUrl: './modal.component.html'
+  templateUrl: './modal.component.html',
+  styleUrls: ['./modal.component.css']
 })
 
 export class ModalComponent {
-  // lgModal is a local variable linked to bs-modal directive
-
   @ViewChild('childModal') public childModal:any;
 
   public showChildModal():void {

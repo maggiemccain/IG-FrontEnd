@@ -15,3 +15,39 @@ h4 {
 .medInput {
   width: 30%;
 }
+
+input, select {
+  border: 1px solid gray;
+  border-radius: 0;
+  margin-bottom: 5px;
+}
+
+.dividerDiv {
+  background-color: #D3D3D3;
+  width: 100%;
+}
+
+.dividerDiv > * {
+  display: inline-block;
+}
+
+.show {
+  display: block;
+}
+
+.right {
+  float: right;
+}
+
+div {
+  margin: 2% 0 2% 0;
+}
+
+.searchBtn {
+  margin: 0 auto;
+  text-align: center !important;
+  background-color: #A40000;
+  width: 10%;
+  color: white;
+  display: block;
+}
