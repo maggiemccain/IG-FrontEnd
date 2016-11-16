@@ -55,10 +55,8 @@
     <select name="jobCategory" id="jobCategory" class="medInput" (ngModel)="jobCategory">
       <!-- FILL OUT WITH OPTIONS  -->
     </select>
-
-<!-- [disabled]="searchForm.ng-pristine" -->
-<!-- [disabled]="entry.ng-pristine" -->
-    <button class="searchBtn" type="submit" (click)="modal.showChildModal()">SEARCH</button>
+    
+    <button class="searchBtn" type="submit" [disabled]="!searchForm.ng-valid" (click)="modal.showChildModal()">SEARCH</button>
     <p class="center"><i>
       You must first enter at least one search term in order to get search results.
     </i></p>

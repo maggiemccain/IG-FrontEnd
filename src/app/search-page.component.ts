@@ -1,5 +1,4 @@
 import { Component, OnInit, AfterViewInit, ViewChild } from '@angular/core';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { ModalComponent } from './modal.component';
 import { Candidate } from './candidate';
 
@@ -16,8 +15,7 @@ export class SearchPageComponent implements OnInit {
   @ViewChild(ModalComponent)
  private modalComponent: ModalComponent;
 
-  ngOnInit() {
-  };
+  ngOnInit() {};
 
   submitted = false;
 
@@ -26,13 +24,8 @@ export class SearchPageComponent implements OnInit {
     console.log(candidate);
   };
 
-  model = new Candidate('ted', 'johnson');
-
   ranges = ['0-1', '2-3', '4-5'];
 
-  // first: string = 'Maggie';
-
-// angular doesn't appear to recognize .hide() as afunction for HTMLelements
   toggle() {
    var e = document.getElementById('toggleDiv');
    var b = document.getElementById('toggleButton');

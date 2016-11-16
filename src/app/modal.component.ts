@@ -1,8 +1,5 @@
 import { Component, Input, Directive, ViewChild, AfterViewInit } from '@angular/core';
 import { ModalModule } from 'ng2-bootstrap/components/modal';
-import { Candidate } from './candidate';
-
-
 
 @Component({
   selector: 'app-modal',
@@ -20,8 +17,6 @@ export class ModalComponent {
   public hideChildModal():void {
     this.childModal.hide();
   }
-
-  @Input() candidate: Candidate;
 
   @Input('first') firstName:string;
   @Input('last') lastName:string;
