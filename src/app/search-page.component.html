@@ -1,41 +1,44 @@
 <h2>Find Candidates</h2>
+<hr>
 
 <h4>Search</h4>
 
 <form #searchForm="ngForm" (ngSubmit)="onSubmit(searchForm.value)">
+  <div id="show">
 
-  <!-- <a (click)="modal.showModal(description)" class="more"> -->
+    <label for="keywords">Keywords</label>
+    <input type="text" name="keywords" id="keywords" (ngModel)="keywords" placeholder="Type your keywords..." >
 
-  <label for="keywords">Keywords</label>
-  <input type="text" name="keywords" id="keywords" (ngModel)="keywords" placeholder="Type your keywords..." >
+    <label for="firstName">First Name</label>
+    <input type="text" name="firstName" id="firstName" class="medInput" (ngModel)="firstName" #entry>
 
-  <label for="firstName">First Name</label>
-  <input type="text" name="firstName" id="firstName" (ngModel)="model.firstName" (ngModel)="firstName" #entry>
+    <label for="lastName">Last Name</label>
+    <input type="text" name="lastName" id="lastName" class="medInput" (ngModel)="lastName">
 
-  <label for="lastName">Last Name</label>
-  <input type="text" name="lastName" id="lastName" (ngModel)="lastName">
+    <label for="email">Email</label>
+    <input type="text" name="email" id="email" class="medInput" (ngModel)="email">
 
-  <label for="email">Email</label>
-  <input type="text" name="email" id="email" (ngModel)="email">
+    <label for="phone">Phone</label>
+    <input type="text" name="phone" id="phone" class="medInput" (ngModel)="phone">
 
-  <label for="phone">Phone</label>
-  <input type="text" name="phone" id="phone" (ngModel)="phone">
+    <label for="city">City</label>
+    <input type="text" name="city" id="city" (ngModel)="city">
 
-  <label for="city">City</label>
-  <input type="text" name="city" id="city" (ngModel)="city">
+    <label for="State">State</label>
+    <input type="text" name="state" id="state" (ngModel)="state">
 
-  <label for="State">State</label>
-  <input type="text" name="State" id="state" (ngModel)="state">
+    <label for="zip">Zipcode</label>
+    <input type="text" name="zip" id="zip" (ngModel)="zip">
 
-  <label for="zip">Zipcode</label>
-  <input type="text" name="zip" id="zip" (ngModel)="zip">
+    <label for="range">Range</label>
+    <select name="range" id="range" (ngModel)="range">
+      <option selected="selected">Select</option>
+      <option *ngFor="let r of ranges" [value]="r">{{r}}</option>
+    </select>
 
-  <label for="range">Range</label>
-  <select name="range" id="range" (ngModel)="range">
-    <option *ngFor="let r of ranges" [value]="r">{{r}}</option>
-  </select>
-
-<!--  HIDE TOGGLE -->
+  </div>
+  <!-- (click)="getElementById('show').hide();" -->
+  <h3 id="toggleButton" (click)="onHide();">Hide</h3>
 
   <div class="additionalSearch">
     <label for="history">Submittal History</label>
@@ -50,32 +53,21 @@
   </div>
 
 <!-- [disabled]="searchForm.ng-pristine" -->
-<!-- (click)="lgModal.show()  lgModal is a local varaible pointing to the modal directive selector-->
-  <button type="submit" (click)="modal.showModal(description)" class="more">Search</button>
+<!-- [disabled]="entry.ng-pristine" -->
+  <button type="submit" (click)="modal.showChildModal()">Search</button>
 
-<app-modal #modal></app-modal>
+  <app-modal #modal [first]="searchForm.value.firstName"
+    [last]="searchForm.value.lastName"
+    [keywords]="searchForm.value.keywords"
+    [email]="searchForm.value.email"
+    [phone]="searchForm.value.phone"
+    [city]="searchForm.value.city"
+    [state]="searchForm.value.state"
+    [range]="searchForm.value.range">
+  </app-modal>
 
 </form>
 
-
-<p>
+<p><i>
   You must first enter at least one search term in order to get search results.
-</p>
-
-<!-- control modal from parent component -->
-<button type="button" class="btn btn-primary" (click)="showChildModal()">Open child modal</button>
-<div bsModal #childModal="bs-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-sm">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" aria-label="Close" (click)="hideChildModal()">
-          <span aria-hidden="true">&times;</span>
-        </button>
-        <h4 class="modal-title">Child modal</h4>
-      </div>
-      <div class="modal-body">
-        I am a child modal, opened from parent component!
-      </div>
-    </div>
-  </div>
-</div>
+</i></p>

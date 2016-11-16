@@ -1,0 +1,17 @@
+h2 {
+  color: #A40000;
+  /*background-color: orange;*/
+  }
+
+h4 {
+  width: 100%;
+  background-color: #D3D3D3;
+}
+
+#keywords {
+  width: 100%;
+}
+
+.medInput {
+  width: 30%;
+}

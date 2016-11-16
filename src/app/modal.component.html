@@ -1,21 +1,24 @@
-<p>
-  modal works!
-</p>
-<!-- BUTTON ACTIVATES MODAL -->
-<button class="btn btn-primary" (click)="lgModal.show()">Large modal</button>
+<!-- <button class="btn btn-primary" (click)="childModal.show()">Large modal</button> -->
 
-<div bsModal #lgModal="bs-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel"
+<div bsModal #childModal="bs-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel"
      aria-hidden="true">
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
             <div class="modal-header">
-                <button type="button" class="close" (click)="lgModal.hide()" aria-label="Close">
+                <button type="button" class="close" (click)="childModal.hide()" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
                 <h4 class="modal-title">Description</h4>
             </div>
             <div class="modal-body">
-                {{modalBody}}
+                <p>Keywords: {{keywords}}</p>
+                <p>First Name: {{firstName}}</p>
+                <p>Last Name: {{lastName}}</p>
+                <p>Email: {{email}}</p>
+                <p>Phone: {{phone}}</p>
+                <p>City: {{city}}</p>
+                <p>State: {{state}}</p>
+                <p>Range: {{range}}</p>
             </div>
         </div>
     </div>
