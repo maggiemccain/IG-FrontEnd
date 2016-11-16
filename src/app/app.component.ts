@@ -1,5 +1,4 @@
 import { Component, ViewContainerRef } from '@angular/core';
-// import { SearchPageComponent } from 'src/app/search-page.component';
 
 @Component({
   selector: 'app-root',
